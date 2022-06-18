@@ -2,8 +2,10 @@ import socket
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-host = "76.76.21.142"
-port = 80
+sock.setdefaulttimeout(2)
+
+host = input("[*] Enter The Host IP: ")
+port = int(input("[*] Enter The Port To Scan: "))
 
 def scanner(host, port):
     if sock.connect_ex((host, port)):
